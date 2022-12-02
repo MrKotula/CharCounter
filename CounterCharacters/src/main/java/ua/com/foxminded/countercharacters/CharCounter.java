@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class CharCounter {
+public class CharCounter implements CounterInterface {
 	private static final StringBuilder RESULT = new StringBuilder();
 	private static final StringBuilder NEXT_LINE = new StringBuilder("\n");
 
-	public String countOfchar(String inputSomeText) {
-		char[] chars = inputSomeText.toCharArray();
+	public String buildResultString(String inputString) {
+		char[] chars = inputString.toCharArray();
 		HashMap<Character, Integer> countMap = new LinkedHashMap<>();
 
 		for (char aChar : chars) {
@@ -21,7 +21,7 @@ public class CharCounter {
 		}
 
 		for (Map.Entry<Character, Integer> e : countMap.entrySet()) {
-			RESULT.append("\"" + e.getKey() + "\"" + " - " + e.getValue()).append(NEXT_LINE);
+			RESULT.append("\"").append(e.getKey()).append("\"").append(" - ").append(e.getValue()).append(NEXT_LINE);
 		}
 		return RESULT.toString();
 	}
