@@ -9,7 +9,7 @@ class CharCounterTest {
 	@Test
 	void checkNullTest() {
 		Assertions.assertThrows(NullPointerException.class, () -> 
-		testObject.countOfchar(null));
+		testObject.buildResultString(null));
 	}
 
 }
