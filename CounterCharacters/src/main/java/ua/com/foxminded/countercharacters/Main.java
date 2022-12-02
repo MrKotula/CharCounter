@@ -7,15 +7,12 @@ public class Main {
 	private static final Logger logger = Logger.getLogger(Main.class.getName());
 
 	public static void main(String[] args) {
-		String inputSomeText;
-		String result;
 		Scanner scan = new Scanner(System.in);
 		
 		logger.info("input some text: ");
-		inputSomeText = scan.nextLine();
-		result = new CharCounter().countOfchar(inputSomeText);
+		String inputString = scan.nextLine();
+		String result = new CharCounter().buildResultString(inputString);
 		logger.info(result);
 		scan.close();
-
 	}
 }
