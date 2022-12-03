@@ -7,8 +7,10 @@ import java.util.Map;
 public class CharCounter implements CounterInterface {
 	private static final StringBuilder RESULT = new StringBuilder();
 	private static final StringBuilder NEXT_LINE = new StringBuilder("\n");
+	private static final StringBuilder SEPARATOR_LINE = new StringBuilder("\"");
+	private static final StringBuilder HYPHEN = new StringBuilder(" - ");
 
-	public String buildResultString(String inputString) {
+	public String countCharacters(String inputString) {
 		char[] chars = inputString.toCharArray();
 		HashMap<Character, Integer> countMap = new LinkedHashMap<>();
 
@@ -19,9 +21,13 @@ public class CharCounter implements CounterInterface {
 				countMap.put(aChar, 1);
 			}
 		}
+		return buildResultString(countMap);
+	}
 
+	private String buildResultString(HashMap<Character, Integer> countMap) {
 		for (Map.Entry<Character, Integer> e : countMap.entrySet()) {
-			RESULT.append("\"").append(e.getKey()).append("\"").append(" - ").append(e.getValue()).append(NEXT_LINE);
+			RESULT.append(SEPARATOR_LINE).append(e.getKey()).append(SEPARATOR_LINE).append(HYPHEN).append(e.getValue())
+					.append(NEXT_LINE);
 		}
 		return RESULT.toString();
 	}
