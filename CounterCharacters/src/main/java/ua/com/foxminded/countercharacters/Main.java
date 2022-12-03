@@ -8,10 +8,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		
 		logger.info("input some text: ");
 		String inputString = scan.nextLine();
-		String result = new CharCounter().buildResultString(inputString);
+		String result = new CharCounter().countCharacters(inputString);
 		logger.info(result);
 		scan.close();
 	}
