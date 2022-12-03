@@ -26,8 +26,7 @@ public class CharCounter implements CounterInterface {
 
 	private String buildResultString(HashMap<Character, Integer> countMap) {
 		for (Map.Entry<Character, Integer> e : countMap.entrySet()) {
-			RESULT.append(SEPARATOR_LINE).append(e.getKey()).append(SEPARATOR_LINE).append(HYPHEN).append(e.getValue())
-					.append(NEXT_LINE);
+			RESULT.append(SEPARATOR_LINE).append(e.getKey()).append(SEPARATOR_LINE).append(HYPHEN).append(e.getValue()).append(NEXT_LINE);
 		}
 		return RESULT.toString();
 	}
