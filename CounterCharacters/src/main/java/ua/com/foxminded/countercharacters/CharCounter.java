@@ -1,6 +1,5 @@
 package ua.com.foxminded.countercharacters;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -12,7 +11,7 @@ public class CharCounter implements CounterInterface {
 
 	public String countCharacters(String inputString) {
 		char[] chars = inputString.toCharArray();
-		HashMap<Character, Integer> countMap = new LinkedHashMap<>();
+		Map<Character, Integer> countMap = new LinkedHashMap<>();
 
 		for (char aChar : chars) {
 			if (countMap.containsKey(aChar)) {
@@ -24,7 +23,7 @@ public class CharCounter implements CounterInterface {
 		return buildResultString(countMap);
 	}
 
-	private String buildResultString(HashMap<Character, Integer> countMap) {
+	private String buildResultString(Map<Character, Integer> countMap) {
 		for (Map.Entry<Character, Integer> e : countMap.entrySet()) {
 			RESULT.append(SEPARATOR_LINE).append(e.getKey()).append(SEPARATOR_LINE).append(HYPHEN).append(e.getValue()).append(NEXT_LINE);
 		}
